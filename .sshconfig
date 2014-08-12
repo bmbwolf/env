@@ -1,0 +1,12 @@
+Host *.s
+    HostName %herver
+    User admin
+    Port 22
+    ProxyCommand ssh sshserver nc %h %p -w 10 2> /dev/null
+
+Host sshserver
+  HostName 10.0.0.1
+  ForwardAgent yes
+  ForwardX11 yes
+  User admin
+  Port 22

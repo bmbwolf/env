@@ -1,0 +1,8 @@
+[Unit]
+Description=Shadowsocks
+After=network.target
+[Service]
+User=nobody
+ExecStart=/usr/bin/python2 /opt/shadowsocks/local.py -s {host} -p {rport} -l {lport} -k {password}
+[Install]
+WantedBy=multi-user.target
